@@ -1,0 +1,173 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+body {
+    background-color: #121212; 
+    color: #e0e0e0; 
+    display: flex;
+    justify-content: center; 
+    padding-top: 80px; 
+    min-height: 100vh; 
+}
+.container {
+    background-color: #1e1e1e;
+    padding: 40px;
+    border-radius: 12px;
+    border: 1px solid #333;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+    width: 90%; 
+    max-width: 900px;
+}
+h2 {
+    text-align: center;
+    color: #ffffff;
+    margin-bottom: 30px; 
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+.input-group {
+    display: flex;
+    align-items: center; 
+    gap: 15px; 
+}
+input {
+    flex: 1; 
+    padding: 14px;
+    background-color: #2d2d2d;
+    border: 1px solid #444;
+    border-radius: 6px;
+    font-size: 16px;
+    color: #fff; 
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+input:focus {
+    border-color: #4CAF50; 
+}
+input::placeholder {
+    color: #888; 
+}
+button {
+    padding: 14px 24px;
+    background-color: #4CAF50; 
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 16px;
+    white-space: nowrap; /* Garante que o texto "Adicionar" não quebre linha */
+    transition: background-color 0.2s, transform 0.1s;
+}
+button:hover {
+    background-color: #45a049; 
+}
+button:active {
+    transform: scale(0.98); 
+}
+ul {
+    list-style: none; 
+    margin-top: 30px;
+    padding: 0; 
+    width: 100%; 
+}
+/* --- Estilo de cada Tarefa na Lista --- */
+li {
+    background-color: #2d2d2d; 
+    color: #fff;
+    padding: 15px;
+    margin-bottom: 10px; 
+    border-radius: 8px;
+    border-left: 5px solid #4CAF50; 
+    font-size: 18px;
+    display: flex;
+    justify-content: space-between; /* Prepara para o botão de deletar no futuro */
+    animation: surgimento 0.3s ease; /* Efeitinho de entrada */
+}
+
+/* Efeito simples de entrada */
+@keyframes surgimento {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+/* Ajuste para o item da lista virar um container flexível */
+li.task {
+    display: flex;
+    justify-content: space-between; /* Empurra o texto pra esq e botão pra dir */
+    align-items: center;
+}
+
+/* Agrupa o checkbox e o texto */
+.task-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* O estilo do botão de lixeira */
+.delete-btn {
+    background-color: transparent; /* Fundo transparente */
+    border: none;
+    cursor: pointer;
+    font-size: 20px;
+    padding: 5px;
+    transition: transform 0.2s;
+}
+
+.delete-btn:hover {
+    transform: scale(1.2); /* Cresce quando passa o mouse */
+    background-color: transparent; /* Mantém transparente */
+}
+/* A "Caixinha" da data na esquerda */
+.task-date {
+    background-color: #333; 
+    padding: 10px;
+    border-radius: 6px;
+    color: #4CAF50; /* Verde Neon */
+    font-weight: bold;
+    font-size: 14px;
+    text-align: center;
+    border: 1px solid #444;
+    min-width: 90px; /* Garante que não fique espremido */
+}
+
+/* Ajuste para alinhar tudo na mesma linha */
+li.task {
+    display: flex;
+    align-items: center; /* Alinha verticalmente */
+    gap: 15px; /* Espaço entre Data, Texto e Lixeira */
+    padding: 15px;
+}
+
+/* O Texto da tarefa ganha destaque */
+.task-info {
+    flex: 1; /* Empurra a lixeira lá para a direita */
+}
+
+.nome-tarefa {
+    font-size: 18px;
+    margin: 0;
+}
+/* Quando a tarefa estiver concluída */
+.task.concluida {
+    opacity: 0.5; /* Fica meio apagadinha */
+    background-color: #1a1a1a; /* Fundo mais escuro */
+}
+
+.task.concluida .nome-tarefa {
+    text-decoration: line-through; /* Riscado */
+    color: #888;
+}
+
+/* Para o usuário saber que pode clicar no texto */
+.task-info {
+    cursor: pointer;
+    transition: opacity 0.2s;
+}
+
+.task-info:hover {
+    opacity: 0.8;
+}
