@@ -34,7 +34,7 @@ Este projeto foi desenvolvido utilizando as seguintes tecnologias:
 
 ##  Preview
 
-![Visualização do Projeto](./assets/preview.png)
+[![Visualização do Projeto](./assets/preview.png)](https://github.com/SamuelzinPires/lista-de-tarefas/issues/1#issue-3741196499)
 
 ##  Como executar o projeto
 
